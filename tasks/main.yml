@@ -1,0 +1,10 @@
+---
+- name: Rules for Debian OS family
+  include: Debian.yml
+  when: ansible_os_family == 'Debian'
+  tags: ["packages"]
+
+- name: Rules for RedHat OS family
+  include: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+  tags: ["packages"]

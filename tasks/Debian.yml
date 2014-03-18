@@ -1,0 +1,12 @@
+---
+- name: Ensure APT proxy is configured
+  template: src=Debian/proxies.j2 dest=/etc/apt/apt.conf.d/95proxies
+  when: packaging_proxy is defined and packaging_proxy != ""
+
+- name: Ensure default packages are installed
+  apt: pkg={{item}} state=installed
+  with_items: packaging_packages
+
+- name: Ensure packages are deleted
+  apt: pkg={{item}} state=absent
+  with_items: packaging_deleted_packages
