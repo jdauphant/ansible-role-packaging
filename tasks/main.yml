@@ -2,9 +2,9 @@
 - name: Rules for Debian OS family
   include: Debian.yml
   when: ansible_os_family == 'Debian'
-  tags: ["packages"]
+  tags: ["packages", "packaging"]
 
 - name: Rules for RedHat OS family
   include: RedHat.yml
   when: ansible_os_family == 'RedHat'
-  tags: ["packages"]
+  tags: ["packages", "packaging"]
