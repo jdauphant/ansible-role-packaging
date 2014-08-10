@@ -1,0 +1,14 @@
+---
+ - name: Add extra repository
+   apt_repository: repo="{{item}}"
+   with_items:
+     - "deb http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main"
+     - "deb-src http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main"
+   when: packaging_ubuntu_extras_repository
+
+ - name: Add partner repository
+   apt_repository: repo="{{item}}"
+   with_items:
+     - "deb http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner"
+     - "deb-src http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner"
+   when: packaging_ubuntu_partner_repository

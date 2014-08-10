@@ -1,4 +1,9 @@
 ---
+- name: Rules for Ubuntu
+  include: Ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'
+  tags: ["packages", "packaging"]
+
 - name: Rules for Debian OS family
   include: Debian.yml
   when: ansible_os_family == 'Debian'
