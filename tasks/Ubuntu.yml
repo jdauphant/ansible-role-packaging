@@ -18,6 +18,6 @@
    with_items:
      - "deb http://archive.ubuntu.com/ubuntu {{ansible_distribution_release}} multiverse"
      - "deb-src http://archive.ubuntu.com/ubuntu/  {{ansible_distribution_release}} multiverse"
-     - "deb http://archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-update multiverse"
-     - "deb-src http://archive.ubuntu.com/ubuntu/  {{ansible_distribution_release}}-update multiverse"
+     - "deb http://archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates multiverse"
+     - "deb-src http://archive.ubuntu.com/ubuntu/  {{ansible_distribution_release}}-updates multiverse"
    when: packaging_ubuntu_multiverse_repository
