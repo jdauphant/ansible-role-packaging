@@ -12,3 +12,12 @@
      - "deb http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner"
      - "deb-src http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner"
    when: packaging_ubuntu_partner_repository
+
+ - name: Add multiverse repository
+   apt_repository: repo="{{item}}"
+   with_items:
+     - "deb http://archive.ubuntu.com/ubuntu {{ansible_distribution_release}} multiverse"
+     - "deb-src http://archive.ubuntu.com/ubuntu/  {{ansible_distribution_release}} multiverse"
+     - "deb http://archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-update multiverse"
+     - "deb-src http://archive.ubuntu.com/ubuntu/  {{ansible_distribution_release}}-update multiverse"
+   when: packaging_ubuntu_multiverse_repository
