@@ -2,6 +2,7 @@
 packaging_ubuntu_extras_repository: false
 packaging_ubuntu_partner_repository: false
 packaging_ubuntu_multiverse_repository: false
+packaging_enable_i386: false
 #packaging_proxy: ""
 packaging_packages: []
 packaging_deleted_packages: []
