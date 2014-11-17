@@ -3,14 +3,14 @@
   template: src=Debian/proxies.j2 dest=/etc/apt/apt.conf.d/95proxies
   when: packaging_proxy is defined and packaging_proxy != ""
 
-- name: Check if i386 is enable
+- name: Check if i386 is enabled
   shell: dpkg --print-foreign-architectures | grep i386
   register: result_i386_check
   changed_when: result_i386_check.rc == 1
   failed_when: result_i386_check.rc > 1
   when: packaging_enable_i386
 
-- name: Add extra repository
+- name: Enable i386 architecture
   command: dpkg --add-architecture i386
   when: packaging_enable_i386 and result_i386_check.rc == 1
 
