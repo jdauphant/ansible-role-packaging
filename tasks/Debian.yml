@@ -24,4 +24,4 @@
 
 - name: Ensure packages are deleted
   apt: pkg={{item}} state=absent
-  with_items: '{{packaging_deleted_packages}}"
+  with_items: "{{packaging_deleted_packages}}"
