@@ -20,8 +20,8 @@
 
 - name: Ensure default packages are installed
   apt: pkg={{item}} state=installed
-  with_items: packaging_packages
+  with_items: "{{packaging_packages}}"
 
 - name: Ensure packages are deleted
   apt: pkg={{item}} state=absent
-  with_items: packaging_deleted_packages
+  with_items: '{{packaging_deleted_packages}}"
