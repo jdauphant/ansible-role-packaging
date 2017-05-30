@@ -1,9 +1,6 @@
 ---
  - name: Add extra repository
-   apt_repository: repo="{{item}}"
-   with_items:
-     - "deb http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main"
-     - "deb-src http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main"
+   apt: pkg=ubuntu-restricted-extras state=installed
    when: packaging_ubuntu_extras_repository
 
  - name: Add partner repository
